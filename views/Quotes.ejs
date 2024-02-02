@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Quotes</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="top-section4">
+        <h1><span>Hindi</span> Quotes</h1>
+    <p> Using REST API - Hindi Quotes</p>
+        <p>An <a href="https://hindi-quotes.vercel.app/">API</a> which display random हिन्दी Quotes.</p></div>
+        <div class="layout">
+   
+        <div class="form">
+    <form method="post" action="/custom">
+        <fieldset>
+            <legend>Categories</legend>
+        <label for="success"><input class="check" id="success" type="radio" name="categories" value="success" /> Success</label>
+        <label for="love"> <input class="check" id="love" type="radio" name="categories" value="love" /> love </label>
+        <label for="attitude"> <input class="check" id="attitude" type="radio" name="categories" value="attitude" /> Attitude </label>
+       
+        <label for="motivational"> <input class="check" id="motivational" type="radio" name="categories" value="motivational" /> Motivational </label>
+        <label for="positive"> <input class="check" id="positive" type="radio" name="categories" value="positive" /> positive </label>
+        
+    </fieldset>
+
+    <button id="mainbutton" type="submit" value="submit">Custom =></button>
+    </form>
+    <p class="direction"><a href="/">Click to move to Jokes Page =></a></p>
+    <p class="direction"><a href="./Anime">Click to Jump to Anime Quotes  =></a></p>
+    <p class="direction"><a href="./program">Click to Jump to Programming Quotes  =></a></p>
+        </div >
+    <div class="joke">
+       
+    
+        <div>
+            <div class="block">
+        <h2>Quotes</h2>
+        <h3>&euro; <%=  tag %></h3>
+       
+        <p>&cent;&gt; <%=  quotes %></p>  </div> 
+       
+             
+         </p>
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>

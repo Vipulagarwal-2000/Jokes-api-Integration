@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes With JokesApi</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="top-section">
+    <h1>Jokes</h1>
+<p> Using Jokes Api</p>
+    <p><a href="https://v2.jokeapi.dev/">JokeAPI</a> is a REST API that serves uniformly and well formatted jokes.</p></div>
+    <div class="layout">
+   <!-- https://v2.jokeapi.dev/joke/Programming?lang=de&type=single&idRange=1-35&amount=2-->
+    <div class="form">
+<form method="post" action="/specific">
+    <fieldset>
+        <legend>Categories</legend>
+    <label for="programming"><input class="check" id="programming" type="checkbox" name="categories" value="Programming" /> Programming</label>
+    <label for="dark"> <input class="check" id="dark" type="checkbox" name="categories" value="Dark" /> Dark </label>
+    <label for="pun"> <input class="check" id="pun" type="checkbox" name="categories" value="Pun" /> Puns </label>
+   
+    <label for="Miscellaneous"> <input class="check" id="Miscellaneous" type="checkbox" name="categories" value="Miscellaneous" /> Mics </label>
+    <label for="Spooky"> <input class="check" id="Spooky" type="checkbox" name="categories" value="Spooky" /> Spooky </label>
+    <label for="Christmas"> <input class="check" id="Christmas" type="checkbox" name="categories" value="Christmas" /> Christmas </label>
+</fieldset>
+<fieldset>
+    <legend>Blacklist</legend>
+<label for="nsfw"><input class="check" id="nsfw" type="checkbox" name="blacklist" value="nsfw" /> NSFW </label>
+<label for="racist"><input class="check" id="racist" type="checkbox" name="blacklist" value="racist" /> Racist </label>
+<label for="political"><input class="check" id="political" type="checkbox" name="blacklist" value="political" /> Political </label>
+<label for="religious"><input class="check" id="religious" type="checkbox" name="blacklist" value="religious" /> Religious </label>
+<label for="sexist"><input class="check" id="sexist" type="checkbox" name="blacklist" value="sexist" /> Sexist</label>
+<label for="explicit"><input class="check" id="explicit" type="checkbox" name="blacklist" value="explicit" /> Explicit </label>
+
+</fieldset>
+<fieldset>
+    <legend>Type</legend>
+<label for="single"><input class="check" id="single" type="checkbox" name="type" value="single" checked/> Single </label>
+<label for="twopart"><input class="check" id="twopart" type="checkbox" name="type" value="twopart" checked/> Two part </label>
+</fieldset>
+
+
+<label class="outside" for="language">Choose a language:
+
+<select class="set" name="language" id="language">
+    <option value="en">En- English</option>
+  <option value="cs">Cs- czech</option>
+  <option value="de">De- German</option>
+  <option value="es">Es- Spanish</option>
+  <option value="fr">Fr- French</option>
+  <option value="pt">Pt- Portugues</option>
+
+ 
+  
+</select>
+</label >
+<label class="outside" for="amount">Amount <input class="set" type="number" id="amount" name="amount" placeholder="..123"></label>
+<p class="outside"> <strong>Max amount &lt; 10 <br/> Least amount &gt; 1<br/> Default: 1 </strong></p>
+<button id="mainbutton" type="submit" value="submit">Custom =></button>
+</form>
+<p class="direction"><a href="./Quotes">Click to move to Quotes Page =></a></p>
+<p class="direction"><a href="./Anime">Click to Jump to Anime Quotes  =></a></p>
+<p class="direction"><a href="./program">Click to Jump to Programming Quotes  =></a></p>
+    </div >
+<div class="joke">
+    <%  if(multijokes === undefined){%>
+    <% if(joke != undefined){%>
+
+    <div>
+        <div class="block">
+    <h2>Joke</h2>
+    <h3>&euro; <%=  tag %></h3>
+   
+    <p>&cent;&gt; <%=   joke %></p>  </div> 
+    <% }else{ %>
+        <div class="block">
+    <h2>Joke</h2>
+    <h3>&euro; <%=  tag %></h3>
+    <p> &gt; <%=  data %></p>
+    <p>  &amp;  <%= delivery %></div>
+
+        <% } %>
+        <% }else{ %>
+        <% for(var i=0; i < multijokes.length; i++){%>
+            <% if(multijokes[i].joke !== undefined){%>
+
+                
+                    <div>
+                        <div class="block">
+                <h2>Loop Jokes</h2>
+                <h3>&euro; <%= multijokes[i].category%></h3>
+           
+            <p> &cent;&gt; <%=  multijokes[i].joke %></p>   </div>
+            <% }else{ %>
+                <div class="block">
+                <h2>Setup and delivery kind</h2>
+                <h3>&euro; <%=  multijokes[i].category %></h3>
+            <p>&gt; <%=  multijokes[i].setup %></p>
+            <p>&amp; 
+                <%=  multijokes[i].delivery %></div>
+        
+                <% } %>
+
+                <% } %>
+
+        <% } %>
+         
+     </p>
+    </div>
+</div>
+</div>
+</body>
+</html>
