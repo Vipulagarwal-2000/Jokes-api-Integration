@@ -36,7 +36,7 @@ body {
     margin-left:20px;
     display: flex;
     flex-direction: column;
-  
+  height:120vh;
     margin-top: 20px;
     background-color: rgba(169, 112, 190, 0.819);
     
@@ -80,7 +80,7 @@ legend {
     color:rgb(31, 27, 23);
     background-color: antiquewhite;
     font-family: monospace;
-  
+    height:60vh;
     overflow-y: scroll;
 
 }
